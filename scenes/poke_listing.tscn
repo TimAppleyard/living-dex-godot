@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b5dcpuuqgb6bn"]
+
+[ext_resource type="Texture2D" uid="uid://d2dir1d08k8lh" path="res://icon.svg" id="1_xhiox"]
+
+[node name="PokeListing" type="Button" unique_id=49551888]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.21000001
+offset_bottom = -0.08000183
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "I am a Poke Listing"
+icon = ExtResource("1_xhiox")
+
+[node name="CheckButton" type="CheckButton" parent="." unique_id=680224129]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.98700005
+anchor_top = 0.5
+anchor_right = 0.98700005
+anchor_bottom = 0.5
+offset_left = -44.024048
+offset_top = -12.0
+offset_right = -0.024047852
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
