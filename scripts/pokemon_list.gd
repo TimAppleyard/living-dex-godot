@@ -19,9 +19,9 @@ func create_listings() -> void:
 	for id in range(1, num_mons+1):
 		var file_location = poke_files_dir + str(id) + ".json"
 		var poke_data = retrieve_json(file_location)
-		#Create a new pokemon listing, give it its name, and add it as a child
-		var listing = pokemonListingScene.instantiate()
-		listing.set_text(poke_data["name"])
+		#Create a new pokemon listing, give it it's data, and add it as a child
+		var listing: PokeListing = pokemonListingScene.instantiate()
+		listing.set_poke_data(poke_data)
 		add_child(listing)
 		listing.set_h_size_flags(SIZE_FILL)
 	
