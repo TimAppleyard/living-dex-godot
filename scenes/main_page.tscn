@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cw63w4iwv1vkt"]
 
-[ext_resource type="Script" uid="uid://dsnw45jhhip3k" path="res://scenes/pokemon_list.gd" id="1_cod0d"]
+[ext_resource type="Script" uid="uid://dsnw45jhhip3k" path="res://scripts/pokemon_list.gd" id="1_cod0d"]
 
 [node name="MainPage" type="ScrollContainer" unique_id=717382009]
 anchors_preset = 15

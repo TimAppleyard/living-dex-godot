@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5dcpuuqgb6bn"]
 
 [ext_resource type="Texture2D" uid="uid://d2dir1d08k8lh" path="res://icon.svg" id="1_xhiox"]
+[ext_resource type="Script" uid="uid://cue2o3uyqcsvh" path="res://scripts/poke_listing.gd" id="2_fmdwm"]
 
 [node name="PokeListing" type="Button" unique_id=49551888]
 anchors_preset = -1
@@ -12,6 +13,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 text = "I am a Poke Listing"
 icon = ExtResource("1_xhiox")
+script = ExtResource("2_fmdwm")
 
 [node name="CheckButton" type="CheckButton" parent="." unique_id=680224129]
 layout_mode = 1

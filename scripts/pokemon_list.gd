@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	
 func create_listings() -> void:
 	#Parse through every json file in pokemon_files, and create a PokeListing Node for it
-	for id in range(1, num_mons):
+	for id in range(1, num_mons+1):
 		var file_location = poke_files_dir + str(id) + ".json"
 		var poke_data = retrieve_json(file_location)
 		#Create a new pokemon listing, give it its name, and add it as a child
