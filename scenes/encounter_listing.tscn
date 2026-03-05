@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bc5v6auqeqjk7"]
+
+[ext_resource type="Script" uid="uid://bi1opdiptlvef" path="res://scripts/encounter_listing.gd" id="1_xg5ln"]
+
+[node name="EncounterListing" type="ColorRect" unique_id=2079263602]
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -498.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_xg5ln")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1184565061]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer" unique_id=1693358167]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="RouteInfoLabel" type="Label" parent="HSplitContainer/VBoxContainer" unique_id=607980041]
+layout_mode = 2
+text = "Route Info"
+
+[node name="EncounterMethodLabel" type="Label" parent="HSplitContainer/VBoxContainer" unique_id=1654098093]
+layout_mode = 2
+text = "Encounter Method"
+
+[node name="LevelRangeLabel" type="Label" parent="HSplitContainer/VBoxContainer" unique_id=1672256761]
+layout_mode = 2
+text = "Level Range"
+
+[node name="EncounterRateLabel" type="Label" parent="HSplitContainer" unique_id=280228248]
+layout_mode = 2
+text = "Encounter Rate"
+horizontal_alignment = 2

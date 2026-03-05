@@ -11,6 +11,7 @@ func _ready() -> void:
 	
 func _button_pressed():
 	var menu: EncounterMenu = encounterMenuScene.instantiate()
+	menu.set_poke_data(pokeData)
 	add_child(menu)
 
 #give the listing the pokemon's data and changes the buttons ui and name

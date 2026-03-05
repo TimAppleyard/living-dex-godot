@@ -23,7 +23,6 @@ func create_listings() -> void:
 		var listing: PokeListing = pokemonListingScene.instantiate()
 		listing.set_poke_data(poke_data)
 		add_child(listing)
-		listing.set_h_size_flags(SIZE_FILL)
 	
 func retrieve_json(file_location: String) -> Dictionary:
 	#Get the string out of the given file
