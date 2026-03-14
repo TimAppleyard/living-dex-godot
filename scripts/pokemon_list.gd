@@ -10,7 +10,6 @@ func _ready() -> void:
 	create_listings()
 	load_save_file()
 
-#All nodes currently being saved should just be 
 func save() -> void:
 	var save_file = FileAccess.open(save_file_location, FileAccess.WRITE)
 	for child: Node in get_children():
@@ -66,12 +65,6 @@ func retrieve_json(file_location: String) -> Dictionary:
 	else:
 		print("JSON Parse Error: ", json.get_error_message(), " in ", file_text, " at line ", json.get_error_line())
 		return {}
-
-
-func _on_timer_timeout() -> void:
-	save()
-	print("Autosave complete")
-
 
 func _on_line_edit_text_changed(new_text: String) -> void:
 	for child: Node in get_children():

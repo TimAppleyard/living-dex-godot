@@ -1,3 +1,4 @@
+class_name EncounterListing
 extends ColorRect
 
 @onready var route_info_label: Label = $HSplitContainer/VBoxContainer/RouteInfoLabel
