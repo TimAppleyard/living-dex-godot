@@ -3,12 +3,23 @@ class_name PokeListing
 extends Button
 
 var encounterMenuScene = preload("res://scenes/encounter_menu.tscn")
+@onready var check_button: CheckBox = $CheckButton
+
 var pokeData: Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pressed.connect(_button_pressed)
 	
+func set_obtained_status(new_status: bool) -> void:
+	check_button.button_pressed = new_status
+	
+func get_obtained_status() -> bool:
+	return check_button.button_pressed
+	
+func get_poke_name() -> String:
+	return pokeData["name"]
+
 func _button_pressed():
 	var menu: EncounterMenu = encounterMenuScene.instantiate()
 	menu.set_poke_data(pokeData)

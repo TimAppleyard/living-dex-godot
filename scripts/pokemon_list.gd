@@ -3,16 +3,40 @@ extends VBoxContainer
 var poke_files_dir: String = "res://pokemon_files/"
 var pokemonListingScene = preload("res://scenes/poke_listing.tscn")
 var num_mons = 386
+var save_file_location: String = "res://livingdex.save"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	create_listings()
-	pass # Replace with function body.
+	load_save_file()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#All nodes currently being saved should just be 
+func save() -> void:
+	var save_file = FileAccess.open(save_file_location, FileAccess.WRITE)
+	for child: Node in get_children():
+		if child is PokeListing:
+			var node_data = {"Obtained": child.get_obtained_status()}
+			var json_string = JSON.stringify(node_data)
+			save_file.store_line(json_string)
+		else:
+			push_error("Child node of PokemonList is not of type PokeListing")
+			
+func load_save_file() -> void:
+	#First time loading, may be no file to load
+	if not FileAccess.file_exists(save_file_location):
+		return
+		
+	var save_file = FileAccess.open(save_file_location, FileAccess.READ)
+	var listings: Array = get_children()
+	var listing_location = 0
+	while (save_file.get_position() < save_file.get_length()) and (listing_location < listings.size()):
+		var json_string = save_file.get_line()
+		var json = JSON.new()
+		var parse_result = json.parse(json_string)
+		var node_data = json.data
+		listings[listing_location].set_obtained_status(node_data["Obtained"])
+		listing_location += 1
+		
 	
 func create_listings() -> void:
 	#Parse through every json file in pokemon_files, and create a PokeListing Node for it
@@ -41,3 +65,19 @@ func retrieve_json(file_location: String) -> Dictionary:
 	else:
 		print("JSON Parse Error: ", json.get_error_message(), " in ", file_text, " at line ", json.get_error_line())
 		return {}
+
+
+func _on_timer_timeout() -> void:
+	save()
+	print("Autosave complete")
+
+
+func _on_line_edit_text_changed(new_text: String) -> void:
+	for child: Node in get_children():
+		if(child is PokeListing):
+			if(new_text.is_empty() or child.get_poke_name().containsn(new_text)):
+				child.visible = true
+			else:
+				child.visible = false
+		else:
+			push_error("Child node of PokemonList is not of type PokeListing")

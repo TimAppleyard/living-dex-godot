@@ -2,18 +2,50 @@
 
 [ext_resource type="Script" uid="uid://dsnw45jhhip3k" path="res://scripts/pokemon_list.gd" id="1_cod0d"]
 
-[node name="MainPage" type="ScrollContainer" unique_id=717382009]
+[node name="Control" type="Control" unique_id=472805667]
+layout_mode = 3
 anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1812346936]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect" unique_id=1907116349]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 12.0
+offset_right = 1137.5
+offset_bottom = 43.0
+
+[node name="SaveTimer" type="Timer" parent="." unique_id=997551391]
+wait_time = 5.0
+autostart = true
+
+[node name="Scroll" type="ScrollContainer" parent="." unique_id=717382009]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.07716049
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
 
-[node name="PokemonList" type="VBoxContainer" parent="." unique_id=582909498]
+[node name="PokemonList" type="VBoxContainer" parent="Scroll" unique_id=582909498]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 script = ExtResource("1_cod0d")
+
+[connection signal="text_changed" from="ColorRect/LineEdit" to="Scroll/PokemonList" method="_on_line_edit_text_changed"]
+[connection signal="timeout" from="SaveTimer" to="Scroll/PokemonList" method="_on_timer_timeout"]

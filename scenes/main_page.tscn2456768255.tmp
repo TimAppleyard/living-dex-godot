@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cw63w4iwv1vkt"]
+
+[ext_resource type="Script" uid="uid://dsnw45jhhip3k" path="res://scripts/pokemon_list.gd" id="1_cod0d"]
+
+[node name="MainPage" type="ScrollContainer" unique_id=717382009]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PokemonList" type="VBoxContainer" parent="." unique_id=582909498]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+script = ExtResource("1_cod0d")
+
+[node name="SaveTimer" type="Timer" parent="." unique_id=997551391]
+wait_time = 30.0
+autostart = true
+
+[connection signal="timeout" from="SaveTimer" to="PokemonList" method="_on_timer_timeout"]
