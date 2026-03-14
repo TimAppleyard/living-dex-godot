@@ -14,6 +14,9 @@ func _ready() -> void:
 func set_obtained_status(new_status: bool) -> void:
 	check_button.button_pressed = new_status
 	
+func set_save_signal(save_function: Callable) -> void:
+	check_button.pressed.connect(save_function)
+	
 func get_obtained_status() -> bool:
 	return check_button.button_pressed
 	
