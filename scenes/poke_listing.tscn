@@ -6,11 +6,10 @@
 [node name="PokeListing" type="Button" unique_id=49551888]
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 0.21000001
-offset_bottom = -0.08000183
+offset_bottom = 136.0
 grow_horizontal = 2
 size_flags_horizontal = 3
-size_flags_vertical = 6
+size_flags_vertical = 3
 text = "I am a Poke Listing"
 icon = ExtResource("1_xhiox")
 script = ExtResource("2_fmdwm")
