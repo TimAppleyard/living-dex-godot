@@ -22,3 +22,6 @@ func set_data(new_data: Dictionary) -> void:
 	
 func get_game() -> String:
 	return encounter_data["version"]
+	
+func get_encounter_rate() -> float:
+	return encounter_data["rarity"]
