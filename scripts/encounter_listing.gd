@@ -19,3 +19,6 @@ func _change_labels() -> void:
 
 func set_data(new_data: Dictionary) -> void:
 	encounter_data = new_data
+	
+func get_game() -> String:
+	return encounter_data["version"]

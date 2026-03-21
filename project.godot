@@ -15,6 +15,10 @@ run/main_scene="res://scenes/main_page.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameFilters="*uid://h1eden8w7ju0"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
