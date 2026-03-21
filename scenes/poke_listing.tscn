@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cue2o3uyqcsvh" path="res://scripts/poke_listing.gd" id="2_fmdwm"]
 
 [node name="PokeListing" type="Button" unique_id=49551888]
-anchors_preset = -1
+anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 136.0
 grow_horizontal = 2

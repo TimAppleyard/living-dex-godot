@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dfyxh3ss5libr"]
+
+[ext_resource type="Script" uid="uid://bo55ktw3uiplp" path="res://scripts/encounter_list.gd" id="1_ieeo5"]
+
+[node name="EncounterList" type="VBoxContainer" unique_id=1701364986]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ieeo5")
+
+[node name="FireredTitle" type="RichTextLabel" parent="." unique_id=833199972]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 25
+text = "-- FireRed --"
+fit_content = true
+
+[node name="FireRedContainer" type="VBoxContainer" parent="." unique_id=630315590]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="LeafgreenTitle" type="RichTextLabel" parent="." unique_id=26433271]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 25
+text = "-- LeafGreen--"
+fit_content = true
+
+[node name="LeafGreenContainer" type="VBoxContainer" parent="." unique_id=1913496311]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="RubyTitle" type="RichTextLabel" parent="." unique_id=484521199]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 25
+text = "-- Ruby --"
+fit_content = true
+
+[node name="RubyContainer" type="VBoxContainer" parent="." unique_id=961031956]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="SapphireTitle" type="RichTextLabel" parent="." unique_id=602540902]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 25
+text = "-- Sapphire --"
+fit_content = true
+
+[node name="SapphireContainer" type="VBoxContainer" parent="." unique_id=879455749]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="EmeraldTitle" type="RichTextLabel" parent="." unique_id=248280279]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 25
+text = "-- Emerald --"
+fit_content = true
+
+[node name="EmeraldContainer" type="VBoxContainer" parent="." unique_id=1911349846]
+layout_mode = 2
+size_flags_vertical = 0
