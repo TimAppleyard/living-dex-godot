@@ -25,3 +25,6 @@ func get_game() -> String:
 	
 func get_encounter_rate() -> float:
 	return encounter_data["rarity"]
+	
+func get_max_level() -> float:
+	return encounter_data["max_level"]

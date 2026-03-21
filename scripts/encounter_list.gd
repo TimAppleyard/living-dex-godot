@@ -24,7 +24,7 @@ func set_poke_data(newData: Dictionary) -> void:
 	update_ruby_visibility()
 	update_sapphire_visibility()
 	update_emerald_visibility()
-	sort_by_encounter_rate()
+	sort_by_max_level()
 	
 func _fill_list() -> void:
 	for item in pokeData["encounter_list"]:
@@ -48,6 +48,14 @@ func sort_by_encounter_rate()-> void:
 		if child is VBoxContainer:
 			var listings_array: Array = child.get_children()
 			listings_array.sort_custom(func(a, b): return a.get_encounter_rate() > b.get_encounter_rate())
+			for index in range(0, listings_array.size()):
+				child.move_child(listings_array[index], index)
+				
+func sort_by_max_level()-> void:
+	for child in get_children():
+		if child is VBoxContainer:
+			var listings_array: Array = child.get_children()
+			listings_array.sort_custom(func(a, b): return a.get_max_level() > b.get_max_level())
 			for index in range(0, listings_array.size()):
 				child.move_child(listings_array[index], index)
 				
