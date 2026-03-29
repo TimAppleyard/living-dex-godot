@@ -24,7 +24,7 @@ func set_poke_data(newData: Dictionary) -> void:
 	update_ruby_visibility()
 	update_sapphire_visibility()
 	update_emerald_visibility()
-	sort_by_max_level()
+	sort_by_area()
 	
 func _fill_list() -> void:
 	for item in pokeData["encounter_list"]:
@@ -43,7 +43,7 @@ func _fill_list() -> void:
 			"leafgreen":
 				leafgreen_container.add_child(new_encounter_listing)
 				
-func sort_by_encounter_rate()-> void:
+func sort_by_encounter_rate() -> void:
 	for child in get_children():
 		if child is VBoxContainer:
 			var listings_array: Array = child.get_children()
@@ -51,11 +51,20 @@ func sort_by_encounter_rate()-> void:
 			for index in range(0, listings_array.size()):
 				child.move_child(listings_array[index], index)
 				
-func sort_by_max_level()-> void:
+func sort_by_max_level() -> void:
 	for child in get_children():
 		if child is VBoxContainer:
 			var listings_array: Array = child.get_children()
 			listings_array.sort_custom(func(a, b): return a.get_max_level() > b.get_max_level())
+			for index in range(0, listings_array.size()):
+				child.move_child(listings_array[index], index)
+				
+func sort_by_area() -> void:
+	for child in get_children():
+		if child is VBoxContainer:
+			var listings_array: Array = child.get_children()
+			listings_array.sort_custom(func(a, b): \
+				return a.get_route_info().naturalcasecmp_to(b.get_route_info()) < 0)
 			for index in range(0, listings_array.size()):
 				child.move_child(listings_array[index], index)
 				

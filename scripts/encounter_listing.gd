@@ -28,3 +28,6 @@ func get_encounter_rate() -> float:
 	
 func get_max_level() -> float:
 	return encounter_data["max_level"]
+	
+func get_route_info() -> String:
+	return encounter_data["location"]
