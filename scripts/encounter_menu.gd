@@ -52,3 +52,13 @@ func _on_sapphire_selector_toggled(toggled_on: bool) -> void:
 func _on_emerald_selector_toggled(toggled_on: bool) -> void:
 	game_filter.emerald_visibility = !toggled_on
 	encounter_list.update_emerald_visibility()
+
+
+func _on_sort_button_item_selected(index: int) -> void:
+	match index:
+		0:
+			encounter_list.sort_by_area()
+		1:
+			encounter_list.sort_by_max_level()
+		2:
+			encounter_list.sort_by_encounter_rate()

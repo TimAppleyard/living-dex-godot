@@ -24,7 +24,7 @@ func set_poke_data(newData: Dictionary) -> void:
 	update_ruby_visibility()
 	update_sapphire_visibility()
 	update_emerald_visibility()
-	sort_by_area()
+	sort_by_area() #default to sorting by area
 	
 func _fill_list() -> void:
 	for item in pokeData["encounter_list"]:
