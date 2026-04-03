@@ -6,6 +6,7 @@ var encounterMenuScene = preload("res://scenes/encounter_menu.tscn")
 @onready var check_button: CheckBox = $CheckButton
 
 var pokeData: Dictionary
+var id: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,6 +32,10 @@ func _button_pressed():
 	var menu: EncounterMenu = encounterMenuScene.instantiate()
 	menu.set_poke_data(pokeData)
 	add_child(menu)
+	
+func set_id(new_id: int) -> void:
+	id = new_id
+	icon = ResourceLoader.load("res://pokemon_sprites/" + str(id) +".png")
 
 #give the listing the pokemon's data and changes the buttons ui and name
 func set_poke_data(newData: Dictionary) -> void:

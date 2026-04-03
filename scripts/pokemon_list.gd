@@ -45,6 +45,7 @@ func create_listings() -> void:
 		#Create a new pokemon listing, give it it's data, and add it as a child
 		var listing: PokeListing = pokemonListingScene.instantiate()
 		listing.set_poke_data(poke_data)
+		listing.set_id(id)
 		add_child(listing)
 		listing.set_save_signal(save)
 	
